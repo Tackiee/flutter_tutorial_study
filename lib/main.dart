@@ -14,16 +14,31 @@ void main() {
     ],
   );
 
-  final row = Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: [img, img, img],
+  final con2 = Container(
+    color: Colors.yellowAccent,
+    width: 10,
+    height: 10,
   );
+
+  final con = Container(
+    color: Colors.indigo,
+    width: 700,
+    height: 500,
+    child: img,
+    alignment: Alignment.topRight,
+    padding: EdgeInsets.all(20),
+  );
+
+  // final row = Row(
+  //   mainAxisAlignment: MainAxisAlignment.center,
+  //   crossAxisAlignment: CrossAxisAlignment.center,
+  //   children: [img, img, img],
+  // );
 
   final a = MaterialApp(
     home: Scaffold(
       body: Center(
-        child: row,
+        child: con,
       ),
     ),
   );
