@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutorial/counter.dart';
 
 void main() {
   final img = Image.asset('images/sample.png');
@@ -29,6 +30,10 @@ void main() {
     padding: EdgeInsets.all(20),
   );
 
+  final c = Counter(
+    number: 888,
+  );
+
   // final row = Row(
   //   mainAxisAlignment: MainAxisAlignment.center,
   //   crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +43,7 @@ void main() {
   final a = MaterialApp(
     home: Scaffold(
       body: Center(
-        child: con,
+        child: c,
       ),
     ),
   );
