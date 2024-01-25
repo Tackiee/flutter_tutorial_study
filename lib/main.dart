@@ -2,12 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:tutorial/counter.dart';
 
 void main() {
-  showhello() {
-    debugPrint('Hello World');
+  final controller = TextEditingController();
+
+  final textField = TextField(
+    controller: controller,
+    decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: 'Input Text.',
+        hintText: 'Only English',
+        errorText: 'This Text is not English!'),
+  );
+
+  showText() {
+    debugPrint(controller.text);
   }
 
   final button = ElevatedButton(
-    onPressed: showhello,
+    onPressed: showText,
     child: Text('press button'),
     style: ElevatedButton.styleFrom(primary: Colors.blue),
   );
@@ -50,12 +61,23 @@ void main() {
   //   children: [img, img, img],
   // );
 
-  final a = MaterialApp(
+  final app = MaterialApp(
+    // 画面
     home: Scaffold(
+      // 真ん中
       body: Center(
-        child: button,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 300,
+              child: textField,
+            ),
+            button,
+          ],
+        ),
       ),
     ),
   );
-  runApp(a);
+  runApp(app);
 }
