@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:tutorial/counter.dart';
 
 void main() {
+  showhello() {
+    debugPrint('Hello World');
+  }
+
+  final button = ElevatedButton(
+    onPressed: showhello,
+    child: Text('press button'),
+    style: ElevatedButton.styleFrom(primary: Colors.blue),
+  );
+
   final img = Image.asset('images/sample.png');
   final col = Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +53,7 @@ void main() {
   final a = MaterialApp(
     home: Scaffold(
       body: Center(
-        child: c,
+        child: button,
       ),
     ),
   );
